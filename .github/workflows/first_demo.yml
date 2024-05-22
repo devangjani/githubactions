@@ -8,5 +8,12 @@ jobs:
         steps:
         - name: checkout repo for demo
           uses: actions/checkout@v4
-        - name: welcome message
-          run: echo "My First Github actions demo"
+        - name: list and read file
+          run: |
+            echo "List and Read github repo files"
+            ls -ltra
+            cat README.md
+        
+        - name: Generate ASCII code
+          run: cowsay -f duck "Run for cover, I am duck quacckkk... QUACKKKK" >> duck.txt
+
