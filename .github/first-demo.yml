@@ -8,5 +8,7 @@ jobs:
         steps:
         - name: checkout repo for demo
           uses: actions/checkout@v4
+          with:
+            path: main
         - name: welcome message
           run: echo "My First Github actions demo"
