@@ -13,7 +13,4 @@ jobs:
             echo "List and Read github repo files"
             ls -ltra
             cat README.md
-        
-        - name: Generate ASCII code
-          run: cowsay -f duck "Run for cover, I am duck quacckkk... QUACKKKK" >> duck.txt
 
