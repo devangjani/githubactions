@@ -1,0 +1,19 @@
+name: Generate ASCII Artwork
+
+on: push
+
+jobs:
+    ascii_job:
+        runs-on: ubuntu-latest
+        steps:
+        - name: checkout repo for demo
+          uses: actions/checkout@v4
+        - name: Install cowsay program
+          run: sudo apt-get install cowsay -y
+        
+        - name: Execute cowsay CMD
+          run: | 
+            cowsay -f duck "Run for cover, I am duck quacckkk... QUACKKKK" >> duck.txt
+            grep -i 'duck' duck.txt
+            cat duck.txt
+            ls -ltrh
