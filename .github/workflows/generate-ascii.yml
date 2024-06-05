@@ -19,7 +19,7 @@ jobs:
           run: sleep 30
 
     test_job_2:
-        runs-on: ubuntu-test
+        runs-on: ubuntu-latest
         steps:
         - name: sleep for 10 sec
           run: sleep 10
@@ -27,7 +27,7 @@ jobs:
           run: grep -i 'duck' duck.txt
 
     deploy_job3:
-        runs-on: ubuntu-test
+        runs-on: ubuntu-latest
         steps:
         - name: Read file
           run: cat duck.txt
