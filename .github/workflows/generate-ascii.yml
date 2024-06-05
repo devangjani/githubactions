@@ -3,7 +3,7 @@ name: Generate ASCII Artwork
 on: push
 
 jobs:
-    ascii_job:
+    bulid_job1:
         runs-on: ubuntu-latest
         steps:
         - name: checkout repo for demo
@@ -14,6 +14,22 @@ jobs:
         - name: Execute cowsay CMD
           run: | 
             cowsay -f duck "Run for cover, I am duck quacckkk... QUACKKKK" >> duck.txt
-            grep -i 'duck' duck.txt
-            cat duck.txt
-            ls -ltrh
+        
+        - name: sleep for 30 seconds
+          run: sleep 30
+
+    test_job_2:
+        runs-on: ubuntu-test
+        steps:
+        - name: sleep for 10 sec
+          run: sleep 10
+        - name: Test file exist
+          run: grep -i 'duck' duck.txt
+
+    deploy_job3:
+        runs-on: ubuntu-test
+        steps:
+        - name: Read file
+          run: cat duck.txt
+        - name: Deploy
+          run: echo 'Deployinnngg'
