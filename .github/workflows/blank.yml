@@ -1,0 +1,17 @@
+name: Check OpenSSL Location
+
+on: 
+  push:
+    branches:
+      - main
+
+jobs:
+  check-openssl:
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v2
+        
+      - name: Run whereis openssl
+        run: whereis openssl
